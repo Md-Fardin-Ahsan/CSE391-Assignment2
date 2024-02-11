@@ -3,10 +3,10 @@ var fortunes = [
     "Every child is an artist; the problem is staying an artist when you grow up – Pablo Picasso",
     "Don’t think about making art, just get it done. Let everyone else decide if it’s good or bad, whether they love it or hate it. While they are deciding, make even more art.– Andy Warhol",
     "Art is a collaboration between God and the artist, and the less the artist does the better. – Andre Gide",
-    "A journey of a thousand miles begins with a single step.",
-    "You will find success in unexpected places.",
-    "Good things come to those who wait.",
-    "Every adversity carries with it the seed of an equal or greater benefit."
+    "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking. -Steve Jobs",
+    "The way to get started is to quit talking and begin doing. -Walt Disney",
+    "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success. -James Cameron",
+    "The only thing we have to fear is fear itself. -Franklin D. Roosevelt"
   ];
   
   // Function to display a random quote
@@ -106,4 +106,90 @@ function findSum() {
 function findReverse() {
     inputNumbersArr.reverse();
     document.getElementById("reverse").innerHTML = inputNumbersArr;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function clearAll() {
+  document.getElementById('textArea').value = '';
+}
+
+function toggleCapitalize() {
+  var textArea = document.getElementById('textArea');
+  var lines = textArea.value.split('\n');
+  for (var i = 0; i < lines.length; i++) {
+    if (lines[i] !== '') {
+      if (lines[i] === lines[i].toUpperCase()) {
+        lines[i] = lines[i].toLowerCase();
+      } else {
+        lines[i] = lines[i].toUpperCase();
+      }
+    }
+  }
+  textArea.value = lines.join('\n');
+}
+
+function sort() {
+  var textArea = document.getElementById('textArea');
+  var lines = textArea.value.split('\n');
+  lines.sort();
+  textArea.value = lines.join('\n');
+}
+
+function reverse() {
+  var textArea = document.getElementById('textArea');
+  var lines = textArea.value.split('\n');
+  for (var i = 0; i < lines.length; i++) {
+    lines[i] = lines[i].split('').reverse().join('');
+  }
+  textArea.value = lines.join('\n');
+}
+
+function stripBlank() {
+  var textArea = document.getElementById('textArea');
+  var lines = textArea.value.split('\n');
+  for (var i = lines.length - 1; i >= 0; i--) {
+    if (lines[i].trim() === '') {
+      lines.splice(i, 1);
+    } else {
+      lines[i] = lines[i].trim();
+    }
+  }
+  textArea.value = lines.join('\n');
+}
+
+function addNumbers() {
+  var textArea = document.getElementById('textArea');
+  var lines = textArea.value.split('\n');
+  for (var i = 0; i < lines.length; i++) {
+    if (lines[i] !== '') {
+      lines[i] = (i + 1) + '. ' + lines[i];
+    }
+  }
+  textArea.value = lines.join('\n');
+}
+
+function shuffle() {
+  var textArea = document.getElementById('textArea');
+  var lines = textArea.value.split('\n');
+  for (var i = lines.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    [lines[i], lines[j]] = [lines[j], lines[i]];
+  }
+  textArea.value = lines.join('\n');
 }

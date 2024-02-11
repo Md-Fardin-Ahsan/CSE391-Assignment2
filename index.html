@@ -106,18 +106,39 @@
                 <span id="math-input">Input Series of Number: </span><input id="math-input-numbers" type="text">
                 <button onclick="addNumbers()" type="button" id="math-button">Go</button>
                 <div id="max-text">Max: <span id="max">0</span></div>
-    
+
                 <div id="min-text">Min: <span id="min">0</span></div>
-    
+
                 <div id="sum-text">Sum: <span id="sum">0</span></div>
-    
+
                 <div id="avg-text">Average: <span id="avg">0</span></div>
-    
+
                 <div id="reverse-text">Reverse Order: <span id="reverse">Null</span></div>
             </form>
         </div>
     </section>
     <!---------------------------- Max, Min, Sum, Average and reverse  ------------------------------------>
+    <!---------------------------------------------- Magic box  ----------------------------------------------->
+
+    <section>
+        <div class="container">
+            <h1>Magic!</h1>
+            <textarea id="textArea" rows="10" cols="50" placeholder="Enter text here..."></textarea>
+            <div class="button-container">
+                <button class="btn" onclick="clearAll()">Clear All</button>
+                <button class="btn" onclick="toggleCapitalize()">Capitalize</button>
+                <button class="btn" onclick="sort()">Sort</button>
+                <button class="btn" onclick="reverse()">Reverse</button>
+                <button class="btn" onclick="stripBlank()">Strip Blank</button>
+                <button class="btn" onclick="addNumbers()">Add Numbers</button>
+                <button onclick="shuffle()">Shuffle</button>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!---------------------------------------------- Magic box  ----------------------------------------------->
 </body>
 
 </html>
